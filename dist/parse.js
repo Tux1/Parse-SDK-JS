@@ -164,6 +164,9 @@ function run(name, data, options) {
   if (options.sessionToken) {
     requestOptions.sessionToken = options.sessionToken;
   }
+  if (options.headers) {
+    requestOptions.headers = options.headers;
+  }
 
   return _CoreManager2.default.getCloudController().run(name, data, requestOptions)._thenRunCallbacks(options);
 } /**
@@ -194,7 +197,8 @@ var DefaultController = {
       console.log(headers);
       requestOptions.headers = options.headers;
     }
-
+    console.log(options);
+    console.log(requestOptions);
     var request = RESTController.request('POST', 'functions/' + name, payload, requestOptions);
 
     return request.then(function (res) {
@@ -229,7 +233,7 @@ var config = {
   REQUEST_ATTEMPT_LIMIT: 5,
   SERVER_URL: 'https://api.parse.com/1',
   LIVEQUERY_SERVER_URL: null,
-  VERSION: 'js' + '1.10.2',
+  VERSION: 'js' + '1.10.4',
   APPLICATION_ID: null,
   JAVASCRIPT_KEY: null,
   MASTER_KEY: null,
@@ -10733,6 +10737,8 @@ var RESTController = {
 
       xhr.open(method, url, true);
       for (var h in headers) {
+        console.log(h);
+        console.log(headers[h]);
         xhr.setRequestHeader(h, headers[h]);
       }
       xhr.send(data);

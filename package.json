@@ -58,7 +58,7 @@
   "scripts": {
     "build": "./build_releases.sh",
     "release": "./build_releases.sh && npm publish",
-    "test": "PARSE_BUILD=node jest"  
+    "test": "PARSE_BUILD=node jest"
   },
   "jest": {
     "automock": true,
@@ -70,7 +70,9 @@
       "/node_modules/",
       "/test_helpers/"
     ],
-    "transform": {".*": "./babel-jest.js"},
+    "transform": {
+      ".*": "./babel-jest.js"
+    },
     "setupTestFrameworkScriptFile": "./setup-jest.js"
   }
 }
