@@ -194,7 +194,7 @@ var DefaultController = {
       requestOptions.sessionToken = options.sessionToken;
     }
     if (options.hasOwnProperty('headers')) {
-      console.log(headers);
+      console.log(options.headers);
       requestOptions.headers = options.headers;
     }
     console.log(options);
