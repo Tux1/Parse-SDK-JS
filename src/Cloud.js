@@ -57,6 +57,9 @@ export function run(
   if (options.sessionToken) {
     requestOptions.sessionToken = options.sessionToken;
   }
+  if (options.headers) {
+    requestOptions.headers = options.headers;
+  }
 
   return (
     CoreManager.getCloudController().run(name, data, requestOptions)._thenRunCallbacks(options)
@@ -80,7 +83,8 @@ var DefaultController = {
       console.log(headers);
       requestOptions.headers = options.headers;
     }
-
+    console.log(options);
+    console.log(requestOptions);
     var request = RESTController.request(
       'POST',
       'functions/' + name,
