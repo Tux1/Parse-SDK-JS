@@ -136,6 +136,8 @@ const RESTController = {
 
       xhr.open(method, url, true);
       for (var h in headers) {
+        console.log(h);
+        console.log(headers[h]);
         xhr.setRequestHeader(h, headers[h]);
       }
       xhr.send(data);
@@ -154,7 +156,7 @@ const RESTController = {
     url += path;
 
     var headers = options.headers || {};
-  
+    console.log(headers)
     var payload = {};
     if (data && typeof data === 'object') {
       for (var k in data) {

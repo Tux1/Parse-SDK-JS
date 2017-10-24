@@ -1,5 +1,5 @@
 /**
- * Parse JavaScript SDK v1.10.2
+ * Parse JavaScript SDK v1.10.4
  *
  * The source tree of this library can be found at
  *   https://github.com/ParsePlatform/Parse-SDK-JS
@@ -191,6 +191,7 @@ var DefaultController = {
       requestOptions.sessionToken = options.sessionToken;
     }
     if (options.hasOwnProperty('headers')) {
+      console.log(headers);
       requestOptions.headers = options.headers;
     }
 
@@ -10748,7 +10749,7 @@ var RESTController = {
     url += path;
 
     var headers = options.headers || {};
-
+    console.log(headers);
     var payload = {};
     if (data && (typeof data === 'undefined' ? 'undefined' : (0, _typeof3.default)(data)) === 'object') {
       for (var k in data) {
