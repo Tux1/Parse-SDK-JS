@@ -76,6 +76,9 @@ var DefaultController = {
     if (options.hasOwnProperty('sessionToken')) {
       requestOptions.sessionToken = options.sessionToken;
     }
+    if (options.hasOwnProperty('headers')) {
+      requestOptions.headers = options.headers;
+    }
 
     var request = RESTController.request(
       'POST',

@@ -1,6 +1,6 @@
 {
   "name": "parse",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "description": "The Parse JavaScript SDK",
   "homepage": "https://www.parse.com",
   "keywords": [
@@ -11,9 +11,9 @@
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ParsePlatform/Parse-SDK-JS"
+    "url": "https://github.com/Tux1/Parse-SDK-JS"
   },
-  "bugs": "https://github.com/ParsePlatform/Parse-SDK-JS/issues",
+  "bugs": "https://github.com/Tux1/Parse-SDK-JS/issues",
   "files": [
     "index.js",
     "node.js",
@@ -58,7 +58,8 @@
   "scripts": {
     "build": "./build_releases.sh",
     "release": "./build_releases.sh && npm publish",
-    "test": "PARSE_BUILD=node jest"
+    "test": "PARSE_BUILD=node jest",
+    "postinstall": "./build_releases.sh"
   },
   "jest": {
     "automock": true,

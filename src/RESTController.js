@@ -18,6 +18,7 @@ export type RequestOptions = {
   useMasterKey?: boolean;
   sessionToken?: string;
   installationId?: string;
+  headers?: any;
 };
 
 export type FullOptions = {
@@ -152,6 +153,8 @@ const RESTController = {
     }
     url += path;
 
+    var headers = options.headers || {};
+  
     var payload = {};
     if (data && typeof data === 'object') {
       for (var k in data) {
@@ -218,7 +221,7 @@ const RESTController = {
 
       var payloadString = JSON.stringify(payload);
 
-      return RESTController.ajax(method, url, payloadString);
+      return RESTController.ajax(method, url, payloadString, headers);
     }).then(null, function(response: { responseText: string }) {
       // Transform the error into an instance of ParseError by trying to parse
       // the error string as JSON
