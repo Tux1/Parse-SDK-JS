@@ -124,7 +124,7 @@ const RESTController = {
           promise.reject(xhr);
         }
       };
-
+      console.log(headers);
       headers = headers || {};
       if (typeof(headers['Content-Type']) !== 'string') {
         headers['Content-Type'] = 'text/plain'; // Avoid pre-flight
